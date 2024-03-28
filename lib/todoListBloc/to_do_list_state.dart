@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'to_do_list_bloc.dart';
 
 class ToDoListState extends Equatable {
@@ -15,12 +14,11 @@ class ToDoListState extends Equatable {
     return ToDoListState(todoList: todoList);
   }
 
-
-  factory ToDoListState.initial(){
-    return  ToDoListState(todoList: [
-      ToDoModel(description:"reading book", idNo: "1", isCompleted: false), 
-      ToDoModel(description: "Watching movies", idNo: "2", isCompleted: false), 
-       ToDoModel(description: "Cleaning house", idNo: "3", isCompleted: false), 
+  factory ToDoListState.initial() {
+    return ToDoListState(todoList: [
+      ToDoModel(description: "reading book", idNo: "1", isCompleted: false),
+      ToDoModel(description: "Watching movies", idNo: "2", isCompleted: false),
+      ToDoModel(description: "Cleaning house", idNo: "3", isCompleted: false),
     ]);
   }
 }

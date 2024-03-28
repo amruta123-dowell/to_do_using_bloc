@@ -1,10 +1,22 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'search_bloc.dart';
 
-sealed class SearchState extends Equatable {
-  const SearchState();
-  
-  @override
-  List<Object> get props => [];
-}
+class SearchState extends Equatable {
+  final String searchText;
 
-final class SearchInitial extends SearchState {}
+  const SearchState({required this.searchText});
+
+  @override
+  List<Object> get props => [searchText];
+
+  SearchState copyWith({required String searchText}) {
+    return SearchState(searchText: searchText);
+  }
+
+  @override
+  bool get stringify => true;
+
+  factory SearchState.initial() {
+    return const SearchState(searchText: '');
+  }
+}
